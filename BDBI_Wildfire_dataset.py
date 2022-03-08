@@ -22,6 +22,7 @@ for year in range (START_YEAR, END_YEAR + 1):
         data = [line[ROW_START:].split() for line in lines]
 
         df2 = pd.DataFrame(data)
+        df2 = df2.reset_index()
         df2.columns = df2.iloc[0]
         df2 = df2[1:]
         df2['Month'] = month
